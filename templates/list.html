@@ -55,7 +55,7 @@
             padding: 1rem;
             display: flex;
             align-items: center;
-            transition: 0.25s ease-in-out;
+            transition: 0.35s ease-in-out;
             flex-wrap: wrap;
         }
 
@@ -77,6 +77,9 @@
         @media only screen and (max-width: 850px) {
             .item {
                 width: 100%;
+            }
+            .item:hover {
+                transform: perspective(1000px) translateZ(15px) rotate(2deg) rotateY(20deg);
             }
         }
 
