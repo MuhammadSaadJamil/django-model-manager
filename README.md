@@ -1,0 +1,1 @@
+# Testing Customization options with Django admin
