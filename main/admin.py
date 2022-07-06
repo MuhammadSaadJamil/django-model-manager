@@ -26,17 +26,17 @@ class ObjectAdmin(admin.ModelAdmin):
     filter_horizontal = ["ingredients"]
     # filter_vertical = ["ingredients"]
     # form = ObjectForm  # override form with your own custom form
-    ist_select_related = ['ingredients']
+    # list_select_related = ['ingredients']
     list_filter = ['is_available', NameFilter, ('display_date', admin.EmptyFieldListFilter)]
     ordering = ('name', '-quantity',)
     search_fields = ['name', 'ingredients__name']
     actions = [update_availability]
     fieldsets = (
-        (None, {
+        ("Compulsory fields", {
             'fields': ("name", "description", "quantity", "is_available")
         }),
         (
-            'Advanced options', {
+            'Optional fields', {
                 'classes': ('collapse',),
                 'fields': ('display_date', 'ingredients'),
             }
