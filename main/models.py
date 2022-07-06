@@ -1,4 +1,10 @@
 from django.db import models
+from django.db.models import Manager
+
+
+class ObjectManager(Manager):
+    def quantity_gte(self, num):
+        return self.get_queryset().filter(quantity__gte=num)
 
 
 # Create your models here.
@@ -11,6 +17,7 @@ class Object(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
     display_date = models.DateTimeField(null=True, blank=True)
+    manager = ObjectManager()
 
     def __repr__(self):
         return str(self)

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+        }
+
+        .header {
+            min-height: 8rem;
+            background-color: bisque;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: brown;
+        }
+
+        .footer {
+            min-height: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: antiquewhite;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex-wrap: wrap;
+            margin: 2rem 0rem;
+        }
+
+        .item {
+            width: 30%;
+            border: 1px solid black;
+            border-radius: 0.2rem;
+            margin: 1rem;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            transition: 0.25s ease-in-out;
+            flex-wrap: wrap;
+        }
+
+        .item h2 {
+            width: 100%;
+        }
+
+        .item p {
+            width: 100%;
+            padding: 0.25rem 0rem;
+        }
+
+        .item:hover {
+            cursor: pointer;
+            transform: perspective(1000px) translateZ(75px) rotate(2deg) rotateX(10deg) rotateY(20deg);
+            border-color: brown;
+        }
+
+    </style>
+</head>
+<body>
+<header class="header">
+    <h1>Items</h1>
+</header>
+<div class="container">
+    <div class="list">
+        {% for item in items %}
+            <div class="item">
+                <h2>{{ item.name }}</h2>
+                <p>Quantity : {{ item.quantity }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<footer class="footer"></footer>
+</body>
+</html>

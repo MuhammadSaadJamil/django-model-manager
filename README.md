@@ -1,1 +1,1 @@
-# Testing Customization options with Django admin
+# Testing Customization options with Django admin AND MODEL MANAGER
