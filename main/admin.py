@@ -7,7 +7,7 @@ from .models import Object
 from .adminFilters import NameFilter
 
 
-@admin.register(Object)
+# @admin.register(Object)
 class ObjectAdmin(admin.ModelAdmin):
     list_display = ["name", "quantity", "is_available", "created_on", "display_date"]
     list_display_links = ["name", "quantity", "is_available", "created_on", "display_date"]
@@ -39,9 +39,9 @@ class ObjectAdmin(admin.ModelAdmin):
     }
 
 # My Custom Admin
-# class MyAdminSite(AdminSite):
-#     site_header = 'My Custom administration'
-#
-#
-# admin_site = MyAdminSite(name='myadmin')
-# admin_site.register(Object, ObjectAdmin)
+class MyAdminSite(AdminSite):
+    site_header = 'My Custom administration'
+
+
+admin_site = MyAdminSite(name='myadmin')
+admin_site.register(Object, ObjectAdmin)
