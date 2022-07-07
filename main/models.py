@@ -17,6 +17,7 @@ class Object(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
     display_date = models.DateTimeField(null=True, blank=True)
+    extra_attributes = models.JSONField(null=True, blank=True)
     manager = ObjectManager()
 
     def __repr__(self):

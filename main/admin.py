@@ -38,7 +38,7 @@ class ObjectAdmin(admin.ModelAdmin):
         (
             'Optional fields', {
                 'classes': ('collapse',),
-                'fields': ('display_date', 'ingredients'),
+                'fields': ('display_date', 'ingredients', 'extra_attributes'),
             }
         )
     )
